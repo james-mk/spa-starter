@@ -17,7 +17,7 @@
         .container {
             max-width: 600px;
             margin: 20px auto;
-            background: #ffffff;
+            background: #14539A;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

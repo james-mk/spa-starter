@@ -39,7 +39,7 @@ const vuetify = createVuetify({
                     success: '#4CAF50',
                     warning: '#FFC107',
                     background: '#F5F5F5',
-                    surface: '#FFFFFF',
+                    surface: '#14539A',
                 },
             },
             dark: {
