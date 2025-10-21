@@ -155,7 +155,7 @@ function updateDrawer(val) {
 }
 
 const primaryColor = computed(() => {
-    return settingsStore.primaryColor || "#14539A";
+    return settingsStore.primaryColor || "#FFFFFF";
 });
 
 const textColor = computed(() => {

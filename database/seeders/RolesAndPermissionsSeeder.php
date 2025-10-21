@@ -30,6 +30,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'edit settings',
             'delete settings',
             'view settings',
+            'view logs'
         ];
 
         foreach ($permissions as $p) {

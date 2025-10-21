@@ -26,7 +26,7 @@ export function useColorUtils() {
 
     // Get contrasting text color
     const getContrastColor = (backgroundColor) => {
-        const contrast = isLightColor(backgroundColor) ? '#000000' : '#14539A';
+        const contrast = isLightColor(backgroundColor) ? '#000000' : '#FFFFFF';
         console.log('Background:', backgroundColor, 'Text Color:', contrast);
         return contrast;
     };
