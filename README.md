@@ -1,6 +1,6 @@
-# Fleet Management System
+# Admin Panel Starter For A Single Page App
 
-A modern, SPA starter Admin Panel for a Fleet Management System built with Laravel and Vue.js. This system provides comprehensive user management, role-based access control, activity logging, and customizable branding.
+A modern, SPA starter Admin Panel  built with Laravel and Vue.js. This system provides comprehensive user management, role-based access control, activity logging, and customizable branding.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Laravel](https://img.shields.io/badge/Laravel-11.x-red.svg)
@@ -174,7 +174,7 @@ php artisan key:generate
 php artisan migrate
 ```
 
-### 7. Seed Database (Optional)
+### 7. Seed Database 
 ```bash
 php artisan db:seed
 ```
@@ -597,7 +597,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **James Kimani** - *Initial work* - [YourGitHub](https://github.com/james-mk)
+- **James Kimani** - *Initial work* - [visit](https://github.com/james-mk)
 
 ## 🙏 Acknowledgments
 
