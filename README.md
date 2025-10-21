@@ -1,4 +1,4 @@
-# Admin Panel Starter For A Single Page App
+# Starter Admin Panel For A Single Page App
 
 A modern, SPA starter Admin Panel  built with Laravel and Vue.js. This system provides comprehensive user management, role-based access control, activity logging, and customizable branding.
 
@@ -87,7 +87,7 @@ A modern, SPA starter Admin Panel  built with Laravel and Vue.js. This system pr
 ## 🛠 Technologies Used
 
 ### Backend
-- **Laravel 11.x** - PHP framework
+- **Laravel 12.0** - PHP framework
 - **MySQL** - Database
 - **Laravel Sanctum** - API authentication
 
@@ -144,13 +144,13 @@ cp .env.example .env
 
 Edit `.env` file and configure your database and mail settings:
 ```env
-APP_NAME="Fleet Management System"
+APP_NAME="your_app_name"
 APP_URL=http://localhost:8000
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=fleet_management
+DB_DATABASE=your_database_name
 DB_USERNAME=root
 DB_PASSWORD=
 
@@ -160,7 +160,7 @@ MAIL_PORT=2525
 MAIL_USERNAME=your_username
 MAIL_PASSWORD=your_password
 MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=noreply@fleetmanagement.com
+MAIL_FROM_ADDRESS=noreply@youremail.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
@@ -313,7 +313,7 @@ MAIL_ENCRYPTION=tls
 
 ## 📁 Project Structure
 ```
-fleet-management-system/
+spa-starter/
 ├── app/
 │   ├── Http/
 │   │   ├── Controllers/
@@ -524,7 +524,7 @@ Already included in `public/.htaccess`
 server {
     listen 80;
     server_name yourdomain.com;
-    root /var/www/fleet-management/public;
+    root /var/www/spa-starter/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-Content-Type-Options "nosniff";
