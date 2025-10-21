@@ -1,0 +1,156 @@
+/* Import Inter font */
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"); */
+
+/* Global font settings */
+/* * {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, sans-serif;
+} */
+
+/* Poppins font */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+} */
+
+/* work sans */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+}
+
+/* Plus Jakarta Sans */
+/* @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+} */
+
+/* Outfit */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+}
+
+/* Light theme styles */
+.v-theme--light {
+    --v-theme-background: 245, 245, 245;
+    --v-theme-surface: 255, 255, 255;
+}
+
+/* Dark theme styles */
+.v-theme--dark {
+    --v-theme-background: 18, 18, 18;
+    --v-theme-surface: 30, 30, 30;
+}
+
+/* Ensure text colors are appropriate */
+.v-theme--light .text-h4,
+.v-theme--light .text-h5,
+.v-theme--light .text-h6,
+.v-theme--light .text-subtitle-1,
+.v-theme--light .text-body-1 {
+    color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.v-theme--dark .text-h4,
+.v-theme--dark .text-h5,
+.v-theme--dark .text-h6,
+.v-theme--dark .text-subtitle-1,
+.v-theme--dark .text-body-1 {
+    color: rgba(255, 255, 255, 0.87) !important;
+}
+
+/* Main content area */
+.v-main {
+    background-color: rgb(var(--v-theme-background)) !important;
+}
+
+/* Container background */
+.v-container {
+    background-color: transparent;
+}
+
+/* Ensure grey text uses proper theme colors */
+.v-theme--light .text-grey {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.v-theme--dark .text-grey {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Ensure all headings respect theme */
+.v-application .text-h1,
+.v-application .text-h2,
+.v-application .text-h3,
+.v-application .text-h4,
+.v-application .text-h5,
+.v-application .text-h6 {
+    color: rgb(var(--v-theme-on-surface)) !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Ensure subtitle and body text respect theme */
+.v-application .text-subtitle-1,
+.v-application .text-subtitle-2,
+.v-application .text-body-1,
+.v-application .text-body-2 {
+    color: rgba(var(--v-theme-on-surface), 0.87) !important;
+}
+
+/* Toast customizations */
+.Vue-Toastification__toast {
+    font-family: "Inter", sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.Vue-Toastification__toast--success {
+    background-color: #4caf50;
+}
+
+.Vue-Toastification__toast--error {
+    background-color: #f44336;
+}
+
+.Vue-Toastification__toast--warning {
+    background-color: #ff9800;
+}
+
+.Vue-Toastification__toast--info {
+    background-color: #2196f3;
+}
+
+.Vue-Toastification__progress-bar {
+    height: 4px;
+}
+
+/* Better button styling */
+.v-btn {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* Improved input styling */
+.v-field__input {
+    font-weight: 400;
+}
+
+/* Better table styling */
+.v-data-table {
+    font-weight: 400;
+}
+
+.v-data-table th {
+    font-weight: 600 !important;
+}
