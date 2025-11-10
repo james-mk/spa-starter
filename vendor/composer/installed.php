@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '77da9705bfc273e5c29038e7d50c275776457628',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -392,9 +392,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '77da9705bfc273e5c29038e7d50c275776457628',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -610,6 +610,15 @@
             'reference' => 'dfa08f390e509967a15c22493dc0bac5733d9123',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nunomaduro/termwind',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'openspout/openspout' => array(
+            'pretty_version' => 'v4.28.5',
+            'version' => '4.28.5.0',
+            'reference' => 'ab05a09fe6fce57c90338f83280648a9786ce36b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../openspout/openspout',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -997,6 +1006,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'spatie/simple-excel' => array(
+            'pretty_version' => '3.7.3',
+            'version' => '3.7.3.0',
+            'reference' => '4eb3f397ecd288731568750b6cb400762c78232b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/simple-excel',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'staabm/side-effects-detector' => array(
             'pretty_version' => '1.0.5',

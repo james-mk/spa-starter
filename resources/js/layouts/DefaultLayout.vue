@@ -2,7 +2,7 @@
     <v-app>
         <SideBar :drawer="drawer" @update:drawer="drawer = $event" />
 
-        <v-app-bar app color="primary">
+        <v-app-bar app color="primary" elevation="12">
             <v-btn icon @click="drawer = !drawer">
                 <v-icon>mdi-menu</v-icon>
             </v-btn>

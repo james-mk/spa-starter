@@ -328,7 +328,11 @@ onMounted(() => {
     <v-container fluid>
         <v-row class="justify-space-between align-center mb-4">
             <v-col cols="auto">
-                <h2 class="text-h5 font-weight-bold">Users Management</h2>
+                <h2 class="text-h5 font-weight-bold">
+                    <v-icon left color="primary" size="32" class="mr-2"
+                        >mdi-account-multiple</v-icon
+                    >Users Management
+                </h2>
             </v-col>
             <v-col cols="auto" class="d-flex gap-2">
                 <v-btn
@@ -471,9 +475,7 @@ onMounted(() => {
         <v-dialog v-model="showModal" max-width="800px" persistent scrollable>
             <v-card>
                 <v-card-title class="bg-primary text-white">
-                    <span class="text-h6">{{
-                        editMode ? "Edit User" : "Add New User"
-                    }}</span>
+                    <span>{{ editMode ? "Edit User" : "Add New User" }}</span>
                 </v-card-title>
 
                 <v-card-text class="pt-6" style="max-height: 600px">

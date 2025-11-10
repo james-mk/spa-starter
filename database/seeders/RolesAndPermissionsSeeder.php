@@ -14,23 +14,61 @@ class RolesAndPermissionsSeeder extends Seeder
         // permissions
         $permissions = [
             'view dashboard',
+            // roles
             'create roles',
             'edit roles',
             'delete roles',
             'view roles',
+            // permissions
             'create permissions',
             'edit permissions',
             'delete permissions',
             'view permissions',
+            // users
             'create users',
             'edit users',
             'delete users',
             'view users',
+
+            // settings
             'create settings',
             'edit settings',
             'delete settings',
             'view settings',
-            'view logs'
+            'view logs',
+            // Configurations/Taxonomies
+            'view configurations',
+            'create configurations',
+            'edit configurations',
+            'delete configurations',
+
+            //notifications
+            'view notifications',
+            'mark notifications as read',
+            'delete notifications',
+            //drivers
+            'view drivers',
+            'create drivers',
+            'edit drivers',
+            'delete drivers',
+
+            // vehicles
+            'view vehicles',
+            'create vehicles',
+            'edit vehicles',
+            'delete vehicles',
+
+            //incidents
+            'view incidents',
+            'create incidents',
+            'edit incidents',
+            'delete incidents',
+
+            //deductions
+            'view deductions',
+            'create deductions',
+            'edit deductions',
+            'delete deductions',
         ];
 
         foreach ($permissions as $p) {

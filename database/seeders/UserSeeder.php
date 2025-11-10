@@ -19,14 +19,14 @@ class UserSeeder extends Seeder
                 'last_name' => 'Doe',
                 'user_type' => 'admin',
                 'email' => 'admin@example.com',
-                'password' => bcrypt('pa55word'),
+                'password' => bcrypt('Test@123!!'),
             ],
             // [
             //     'first_name' => 'Jane',
             //     'last_name' => 'Smith',
             //     'user_type' => '',
             //     'email' => 'jane.smith@example.com',
-            //     'password' => bcrypt('pa55word'),
+            //     'password' => bcrypt('Test@123!!'),
             // ],
         ];
 

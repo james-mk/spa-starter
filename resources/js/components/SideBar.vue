@@ -5,6 +5,7 @@
         app
         color="primary"
         :style="sidebarStyles"
+        width="320"
     >
         <!-- Sidebar Header - Logo Only -->
         <div class="pa-4 d-flex align-center justify-center sidebar-header">
@@ -36,7 +37,6 @@
         <v-list nav class="py-2">
             <!-- Dashboard -->
             <v-list-item
-                v-if="hasPermission('view dashboard')"
                 link
                 @click="$router.push('/')"
                 prepend-icon="mdi-speedometer"
@@ -56,6 +56,7 @@
                     ])
                 "
                 value="access-control"
+                :class="{ 'active-group': isAccessControlActive }"
             >
                 <template v-slot:activator="{ props }">
                     <v-list-item
@@ -82,7 +83,7 @@
                     v-if="hasPermission('view roles')"
                     link
                     @click="$router.push('/roles')"
-                    prepend-icon="mdi-account-cog"
+                    prepend-icon="mdi-shield-account"
                     title="Roles"
                     :active="$route.path === '/roles'"
                     class="ml-4 mb-1 sidebar-item"
@@ -101,6 +102,18 @@
                 </v-list-item> -->
             </v-list-group>
 
+            <!-- Activity Logs -->
+            <v-list-item
+                v-if="hasPermission('view logs')"
+                link
+                @click="$router.push('/logs')"
+                prepend-icon="mdi-history"
+                title="Activity Logs"
+                :active="$route.path === '/logs'"
+                class="mb-1 sidebar-item"
+            >
+            </v-list-item>
+
             <!-- Settings -->
             <v-list-item
                 v-if="hasPermission('view settings')"
@@ -109,17 +122,6 @@
                 prepend-icon="mdi-cog"
                 title="App Settings"
                 :active="$route.path === '/settings'"
-                class="mb-1 sidebar-item"
-            >
-            </v-list-item>
-            <!-- User Logs -->
-            <v-list-item
-                v-if="hasPermission('view logs')"
-                link
-                @click="$router.push('/logs')"
-                prepend-icon="mdi-text-box-multiple"
-                title="Activity Logs"
-                :active="$route.path === '/logs'"
                 class="mb-1 sidebar-item"
             >
             </v-list-item>
@@ -177,11 +179,17 @@ const dividerColor = computed(() => {
     return isLight ? "rgba(0, 0, 0, 0.12)" : "rgba(255, 255, 255, 0.12)";
 });
 
+const subgroupActiveBackground = computed(() => {
+    const isLight = isLightColor(primaryColor.value);
+    return isLight ? "rgba(0, 0, 0, 0.12)" : "rgba(255, 255, 255, 0.12)";
+});
+
 const sidebarStyles = computed(() => ({
     "--text-color": textColor.value,
     "--hover-bg": hoverBackgroundColor.value,
     "--active-bg": activeBackgroundColor.value,
     "--divider-color": dividerColor.value,
+    "--subgroup-active-bg": subgroupActiveBackground.value,
 }));
 
 const logoFallbackStyles = computed(() => {
@@ -191,6 +199,52 @@ const logoFallbackStyles = computed(() => {
             ? "rgba(0, 0, 0, 0.1)"
             : "rgba(255, 255, 255, 0.1)",
     };
+});
+
+// Check if User Access Control is active
+const isAccessControlActive = computed(() => {
+    const accessControlPaths = ["/users", "/roles", "/permissions"];
+    return accessControlPaths.includes(route.path);
+});
+
+// Check if Incidents subgroup is active
+const isIncidentsActive = computed(() => {
+    const incidentPaths = [
+        "/configurations/incident-categories",
+        "/configurations/incident-sub-categories",
+        "/configurations/incident-types",
+        "/configurations/incident-sub-types",
+    ];
+    return incidentPaths.includes(route.path);
+});
+
+// Check if Deductions subgroup is active
+const isDeductionsActive = computed(() => {
+    const deductionPaths = [
+        "/configurations/deduction-categories",
+        "/configurations/deduction-sub-categories",
+        "/configurations/deduction-specific-issues",
+        "/configurations/deduction-locations",
+    ];
+    return deductionPaths.includes(route.path);
+});
+
+// Check if Payments subgroup is active
+const isPaymentsActive = computed(() => {
+    const paymentPaths = [
+        "/configurations/payment-categories",
+        "/configurations/payment-types",
+    ];
+    return paymentPaths.includes(route.path);
+});
+
+// Check if Vehicle Management subgroup is active
+const isVehiclesActive = computed(() => {
+    const vehiclePaths = [
+        "/configurations/vehicle-makes",
+        "/configurations/vehicle-models",
+    ];
+    return vehiclePaths.includes(route.path);
 });
 
 onMounted(() => {
@@ -300,9 +354,75 @@ onMounted(() => {
     padding-left: 8px;
 }
 
+/* Nested List Groups (Sub-menus within sub-menus) */
+:deep(.v-list-group .v-list-group__items) {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+:deep(.v-list-group .v-list-group .v-list-group__header) {
+    margin: 2px 4px;
+    padding-left: 8px;
+}
+
 /* List Group Header Icon */
 :deep(.v-list-group__header .v-list-group__header__append .v-icon) {
     color: var(--text-color) !important;
     opacity: 0.7;
+}
+
+:deep(.v-list-item-title) {
+    white-space: normal !important;
+    text-overflow: unset !important;
+    overflow: visible !important;
+}
+
+/* Active Subgroup Styling */
+.active-subgroup {
+    position: relative;
+}
+
+.active-subgroup :deep(.v-list-group__header) {
+    background-color: var(--subgroup-active-bg) !important;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.active-subgroup :deep(.v-list-group__header .v-list-item-title) {
+    font-weight: 600;
+}
+
+.active-subgroup :deep(.v-list-group__header .v-list-item__prepend .v-icon) {
+    opacity: 1 !important;
+}
+
+/* Active subgroup gets a left border accent */
+.active-subgroup::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background-color: var(--text-color);
+    border-radius: 0 4px 4px 0;
+    opacity: 0.7;
+}
+
+/* Active subgroup items container gets lighter background */
+.active-subgroup :deep(.v-list-group__items) {
+    background-color: var(--subgroup-active-bg) !important;
+}
+
+/* Active Group (for top-level groups like User Access Control) */
+.active-group :deep(.v-list-group__header) {
+    background-color: var(--subgroup-active-bg) !important;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.active-group :deep(.v-list-group__items) {
+    background-color: var(--subgroup-active-bg) !important;
 }
 </style>

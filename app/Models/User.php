@@ -132,4 +132,22 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Permission::class, 'permission_role');
     }
+
+    /**
+     * Route notifications for mail channel.
+     *
+     * @return string
+     */
+    public function routeNotificationForMail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Get unread notifications count
+     */
+    public function getUnreadNotificationsCountAttribute()
+    {
+        return $this->unreadNotifications()->count();
+    }
 }

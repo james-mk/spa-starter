@@ -186,7 +186,11 @@ onMounted(() => {
     <v-container fluid>
         <v-row class="justify-space-between align-center mb-4">
             <v-col cols="auto">
-                <h2 class="text-h5 font-weight-bold">Roles Management</h2>
+                <h2 class="text-h5 font-weight-bold">
+                    <v-icon left color="primary" size="32" class="mr-2">
+                        mdi-shield-account</v-icon
+                    >Roles Management
+                </h2>
             </v-col>
             <v-col cols="auto" class="d-flex gap-2">
                 <v-btn
@@ -288,9 +292,7 @@ onMounted(() => {
         <v-dialog v-model="showModal" max-width="1000px" persistent>
             <v-card>
                 <v-card-title class="bg-primary text-white">
-                    <span class="text-h6">{{
-                        editMode ? "Edit Role" : "Add New Role"
-                    }}</span>
+                    <span>{{ editMode ? "Edit Role" : "Add New Role" }}</span>
                 </v-card-title>
 
                 <v-card-text class="pt-6">
